@@ -21,4 +21,4 @@ fetch('https://finnhub.io/api/v1/quote?symbol=AAPL&token=cq21q99r01ql95ncg0tgcq2
 
 
 
-    // 86f04071ea234cd5b03be4c073a1e6c5
+// 86f04071ea234cd5b03be4c073a1e6c5
