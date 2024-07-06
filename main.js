@@ -1,62 +1,98 @@
 
-
-// 86f04071ea234cd5b03be4c073a1e6c5
 async function getCoreData() {
-    const aaplQuoteAPI = 'https://api.twelvedata.com/quote?symbol=AAPL&apikey=86f04071ea234cd5b03be4c073a1e6c5';
-    const aaplPriceAPI = 'https://api.twelvedata.com/price?symbol=AAPL&apikey=86f04071ea234cd5b03be4c073a1e6c5';
+    //API urls
+    const aaplQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=AAPL&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const cpQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=CP&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const deQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=DE&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const googlQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=GOOGL&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const hdQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=HD&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const msftQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=MSFT&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const neeQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=NEE&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const tscoQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TSCO&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const txnQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TXN&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const vooQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TXN&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+
+    //Requests
+    const aaplPrice = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const aaplPercent = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const cpPrice = await fetch(cpQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const cpPercent = await fetch(cpQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const dePrice = await fetch(deQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const dePercent = await fetch(deQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const googlPrice = await fetch(googlQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const googlPercent = await fetch(googlQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const hdPrice = await fetch(hdQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const hdPercent = await fetch(hdQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const msftPrice = await fetch(msftQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const msftPercent = await fetch(msftQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const neePrice = await fetch(neeQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const neePercent = await fetch(neeQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const tscoPrice = await fetch(tscoQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const tscoPercent = await fetch(tscoQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const txnPrice = await fetch(txnQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const txnPercent = await fetch(txnQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
+
+    const vooPrice = await fetch(vooQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
+    const vooPercent = await fetch(vooQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
 
 
-    const aaplName = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => data.name);
-    const aaplTicker = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => data.symbol);
-    const aaplExchange = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => data.exchange);
-    const aaplPrice = await fetch(aaplPriceAPI).then(res => res.json()).then(data => data.price);
-    const aaplPercent = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => data.percent_change);
+    const priceDataArr = [
+        aaplPrice,
+        cpPrice,
+        dePrice,
+        googlPrice,
+        hdPrice,
+        msftPrice,
+        neePrice,
+        tscoPrice,
+        txnPrice,
+        vooPrice
+    ];
 
-    console.log(aaplName, aaplTicker, aaplExchange, aaplPrice, aaplPercent)
+    const percentDataArr = [
+        aaplPercent,
+        cpPercent,
+        dePercent,
+        googlPercent,
+        hdPercent,
+        msftPercent,
+        neePercent,
+        tscoPercent,
+        txnPercent,
+        vooPercent
+    ];
+
+
+
+    const aaplDataArr = [aaplPrice, aaplPercent];
+
+    // const priceOutput = document.querySelectorAll('.price-output');
+    console.log(priceDataArr, percentDataArr)
+
+    // console.log(aaplDataArr);
+
+
+
+
+    // const portList = document.querySelector('.portfolio-list');
+    // // const portListItem = document.querySelector('.portfolio-list-item');
+
+    // portList.innerHTML = '';
+
+
 }
 
 getCoreData();
 
 
 
-
-Promise.all([
-    // fetch(aaplQuote).then(r => r.json()),
-    // fetch(aaplPrice).then(r => r.json())
-
-])
-    .then(coreData => {
-        // const portList = document.querySelector('.portfolio-list');
-        // const portListItem = document.querySelector('.portfolio-list-item');
-
-        // portList.innerHTML = '';
-
-        // portList.innerHTML = `
-        //     <li class="portfolio-list-item">
-        //         <div class="portfolio-company-field">
-        //             <span>${data.name}</span>
-        //         </div>
-        //         <div class="portfolio-ticker-field">
-        //             <span>${data.symbol}</span>
-        //         </div>
-        //         <div class="portfolio-exchange-field">
-        //             <span>${data.exchange}</span>
-        //         </div>
-        //         <div class="portfolio-price-field">
-        //             <span>-</span>
-        //         </div>
-        //         <div class="portfolio-percent-field">
-        //             <span>${data.percent_change}</span>
-        //         </div>
-        //     </li>
-
-        // `;
-
-        // console.log(coreData)
-
-
-    })
-
-
-
 // .then(responses => Promise.all(responses.map(res => res.json())))
+

@@ -108,7 +108,7 @@ body {
 .portfolio {
   margin: 0 auto;
   padding: 0 20px;
-  max-width: 1200px;
+  max-width: 1400px;
   /* border: 1px solid crimson; */
 }
 
@@ -152,6 +152,7 @@ body {
 }
 
 .portfolio-list {
+  margin-bottom: 100px;
   font-size: 14px;
   list-style: none;
 }
@@ -160,13 +161,20 @@ body {
   display: flex;
 }
 
+.portfolio-list-item:nth-child(1n) {
+  border-bottom: 1px solid rgba(29, 49, 60, .1);
+  /* border-bottom: 1px solid #eaeaea; */
+
+}
+
+
 .portfolio-company-field,
 .portfolio-ticker-field,
 .portfolio-exchange-field,
 .portfolio-price-field,
 .portfolio-percent-field {
   flex-basis: 20%;
-  padding: 20px 20px 20px 50px;
+  padding: 15px 20px 15px 50px;
 }
 
 /* .portfolio-company-field-text,
