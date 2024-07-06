@@ -125,6 +125,7 @@ body {
   font-size: 32px;
   font-weight: 700;
   color: rgba(29, 49, 60, .9);
+  text-align: center;
 }
 
 .portfolio-wrap {
@@ -141,18 +142,40 @@ body {
 
 .portfolio-header-item {
   flex-basis: 20%;
-  padding: 20px 0 20px 40px;
+  padding: 20px 20px 20px 50px;
 }
 
 .portfolio-header-text {
   /* display: block; */
-  font-weight: 500;
+  font-weight: 600;
   /* text-align: center; */
 }
 
 .portfolio-list {
-  
+  font-size: 14px;
+  list-style: none;
 }
+
+.portfolio-list-item {
+  display: flex;
+}
+
+.portfolio-company-field,
+.portfolio-ticker-field,
+.portfolio-exchange-field,
+.portfolio-price-field,
+.portfolio-percent-field {
+  flex-basis: 20%;
+  padding: 20px 20px 20px 50px;
+}
+
+/* .portfolio-company-field-text,
+.portfolio-ticker-field-text,
+.portfolio-exchange-field-text,
+.portfolio-price-field-text,
+.portfolio-percent-field-text {
+  font-size: 14px;
+} */
 
 
 /* использованая жирность шрифта: 400, 500, 700 */
