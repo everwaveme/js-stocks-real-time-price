@@ -10,7 +10,7 @@ async function getCoreData() {
     const neeQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=NEE&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
     const tscoQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TSCO&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
     const txnQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TXN&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
-    const vooQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=TXN&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
+    const vooQuoteAPI = 'https://finnhub.io/api/v1/quote?symbol=VOO&token=cq21q99r01ql95ncg0tgcq21q99r01ql95ncg0u0';
 
     //Requests
     const aaplPrice = await fetch(aaplQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
@@ -43,7 +43,7 @@ async function getCoreData() {
     const vooPrice = await fetch(vooQuoteAPI).then(res => res.json()).then(data => parseFloat(data.c).toFixed(2));
     const vooPercent = await fetch(vooQuoteAPI).then(res => res.json()).then(data => parseFloat(data.dp).toFixed(2));
 
-
+    //Arrays for price and percent data
     const priceDataArr = [
         aaplPrice,
         cpPrice,
@@ -70,14 +70,15 @@ async function getCoreData() {
         vooPercent
     ];
 
+    //Loops for price and percent change
+    const priceOutput = document.querySelectorAll('.price-output');
+    const percentOutput = document.querySelectorAll('.percent-output');
 
+    for (let i = 0; i < 10; i++) {
+        priceOutput[i].textContent = priceDataArr[i];
+    }
+    
 
-    const aaplDataArr = [aaplPrice, aaplPercent];
-
-    // const priceOutput = document.querySelectorAll('.price-output');
-    console.log(priceDataArr, percentDataArr)
-
-    // console.log(aaplDataArr);
 
 
 
@@ -92,7 +93,4 @@ async function getCoreData() {
 
 getCoreData();
 
-
-
-// .then(responses => Promise.all(responses.map(res => res.json())))
 
