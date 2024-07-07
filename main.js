@@ -76,6 +76,13 @@ async function getCoreData() {
 
     for (let i = 0; i < 10; i++) {
         priceOutput[i].textContent = priceDataArr[i];
+        
+        if (percentDataArr[i] > 0) {
+            percentOutput[i].textContent = `+${percentDataArr[i]}%`;
+        } else {
+            percentOutput[i].textContent = `${percentDataArr[i]}%`;
+        }
+
     }
     
 
