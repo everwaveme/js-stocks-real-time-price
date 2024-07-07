@@ -75,14 +75,20 @@ async function getCoreData() {
     const percentOutput = document.querySelectorAll('.percent-output');
 
     for (let i = 0; i < 10; i++) {
+
+        
         priceOutput[i].textContent = priceDataArr[i];
         
         if (percentDataArr[i] > 0) {
             percentOutput[i].textContent = `+${percentDataArr[i]}%`;
+            percentOutput[i].style.color = '#50a3ab';
+        } else if (percentDataArr[i] == 0) {
+            percentOutput[i].textContent = `${percentDataArr[i]}%`;
+            percentOutput[i].style.color = '#1d313c';
         } else {
             percentOutput[i].textContent = `${percentDataArr[i]}%`;
+            percentOutput[i].style.color = '#c43b39';
         }
-
     }
     
 

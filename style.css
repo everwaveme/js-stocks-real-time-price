@@ -99,7 +99,6 @@
 body {
   font-family: 'Noto Sans Mono', monospace;
   color: #1d313c;
-  /* color: #1F212E; */
   /* background-color: #fadac1; */
   /* background-color: #e7dcc9; */
   /* background-color: #e7ded7; */
@@ -174,6 +173,15 @@ body {
 .portfolio-percent-field {
   flex-basis: 20%;
   padding: 15px 20px 15px 50px;
+}
+
+
+.percent-change-green {
+  color: #50a3ab;
+}
+
+.percent-change-red {
+  
 }
 
 /* .portfolio-company-field-text,
