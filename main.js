@@ -75,8 +75,6 @@ async function getCoreData() {
     const percentOutput = document.querySelectorAll('.percent-output');
 
     for (let i = 0; i < 10; i++) {
-
-        
         priceOutput[i].textContent = priceDataArr[i];
         
         if (percentDataArr[i] > 0) {
@@ -86,22 +84,10 @@ async function getCoreData() {
             percentOutput[i].textContent = `${percentDataArr[i]}%`;
             percentOutput[i].style.color = '#1d313c';
         } else {
-            percentOutput[i].textContent = `${percentDataArr[i]}%`;
+            percentOutput[i].textContent = `${percentDataArr[i]}%`; //it has a minus sign from response data
             percentOutput[i].style.color = '#c43b39';
         }
     }
-    
-
-
-
-
-
-    // const portList = document.querySelector('.portfolio-list');
-    // // const portListItem = document.querySelector('.portfolio-list-item');
-
-    // portList.innerHTML = '';
-
-
 }
 
 getCoreData();
