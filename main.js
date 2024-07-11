@@ -88,14 +88,12 @@ async function getCoreData() {
             percentOutput[i].style.color = '#c43b39';
         }
     }
+
+    setInterval(getCoreData, 180000);
 }
 
 getCoreData();
 
-// setInterval(getCoreData, 5000);
 
-//удалить проверку на NaN
-//добавить отлов ошибок и туда добавить loading data
-//promise.all или try...catch
 
 
